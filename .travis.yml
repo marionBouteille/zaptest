@@ -1,0 +1,7 @@
+language: generic
+
+script:
+  - wget https://github.com/zaproxy/zaproxy/releases/download/2.7.0/ZAP_2.7.0_Linux.tar.gz -O zap.tar.gz && tar -xvf zap.tar.gz
+  - export ZAP_PATH=$(pwd)/ZAP_2.7.0
+  - pip install --user zapcli
+  - zap-cli quick-scan --self-contained --spider -r -s xss http://34.255.30.110:32771 
