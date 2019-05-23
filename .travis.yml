@@ -19,6 +19,6 @@ after_success:
  - sudo chmod +x $HOME/bin/klar
  - DOCKER_LOGIN=`aws ecr get-login --no-include-email --region eu-west-1`
  - PASSWORD=`echo $DOCKER_LOGIN | cut -d' ' -f6`
- - CLAIR_ADDR=http://3r1.co:6060 DOCKER_USER=AWS DOCKER_PASSWORD=${PASSWORD} $HOME/bin/klar 432782038415.dkr.ecr.eu-west-1.amazonaws.com/juice-shop:1.0-25
+ - CLAIR_ADDR=http://clair.3r1.co:6060 DOCKER_USER=AWS DOCKER_PASSWORD=${PASSWORD} $HOME/bin/klar 432782038415.dkr.ecr.eu-west-1.amazonaws.com/juice-shop:1.0-25
  
  
