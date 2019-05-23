@@ -5,7 +5,7 @@ services:
 
 addons:
   artifacts:
-    s3_region: "eu-west-3"
+    s3_region: "eu-west-1"
     paths:
      - ./report 
 
