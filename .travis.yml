@@ -14,6 +14,7 @@ script:
   - docker run -t -v $(pwd)/report:/zap/wrk/:rw owasp/zap2docker-stable zap-baseline.py -t http://34.255.30.110:32771 -r testreport.html || true
  
 after_success:
+ - pip install --user awscli
  - wget https://github.com/optiopay/klar/releases/download/v2.4.0/klar-2.4.0-linux-amd64 -O $HOME/bin/klar
  - sudo chmod +x $HOME/bin/klar
  - DOCKER_LOGIN=`aws ecr get-login --no-include-email`
